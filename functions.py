@@ -74,14 +74,14 @@ def get_video_ids(channel_id: str = "UCBTy8j2cPy6zw68godcE7MQ", lookback_days = 
     url = "https://www.googleapis.com/youtube/v3/search"
     page_token = None
     channel_id = channel_id
-    api_key = yaml.safe_load(open("credentials.yml"))["youtube"]
+    YOUTUBE_API_KEY = yaml.safe_load(open("credentials.yml"))["youtube"]
 
 
     video_record_list = []
 
     while page_token != 0:
         params = {
-            "key": api_key,
+            "key": YOUTUBE_API_KEY,
             "channelId": channel_id,
             "part": ["snippet", "id"],
             "order": "date",
