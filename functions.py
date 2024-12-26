@@ -7,10 +7,10 @@ from sentence_transformers import SentenceTransformer
 import datetime
 import os
 from dotenv import load_dotenv
-import yaml
-from pprint import pprint
+# import yaml
+# from pprint import pprint
 
-import pandas as pd
+# import pandas as pd
 import numpy as np
 
 
