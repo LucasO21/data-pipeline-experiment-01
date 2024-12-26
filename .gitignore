@@ -1,3 +1,4 @@
 credentials.yml
+.env
 .DS_Store
 venv/

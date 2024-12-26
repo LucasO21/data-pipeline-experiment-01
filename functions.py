@@ -6,9 +6,18 @@ from googleapiclient.discovery import build
 from sentence_transformers import SentenceTransformer
 import datetime
 import os
+from dotenv import load_dotenv
 import yaml
 from pprint import pprint
+
+import pandas as pd
 import numpy as np
+
+
+# Youtube API Key
+load_dotenv(dotenv_path = ".env")
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
+
 
 
 def get_video_records(response: requests.models.Response, lookback_days = 30) -> list:
@@ -74,7 +83,7 @@ def get_video_ids(channel_id: str = "UCBTy8j2cPy6zw68godcE7MQ", lookback_days = 
     url = "https://www.googleapis.com/youtube/v3/search"
     page_token = None
     channel_id = channel_id
-    YOUTUBE_API_KEY = yaml.safe_load(open("credentials.yml"))["youtube"]
+    YOUR_API_KEY = YOUTUBE_API_KEY
 
 
     video_record_list = []
