@@ -4,7 +4,7 @@ import polars as pl
 from youtube_transcript_api import YouTubeTranscriptApi
 from googleapiclient.discovery import build
 from sentence_transformers import SentenceTransformer
-import datetime
+from datetime import datetime
 import os
 from dotenv import load_dotenv
 # import yaml
@@ -112,7 +112,9 @@ def get_video_ids(channel_id: str = "UCBTy8j2cPy6zw68godcE7MQ", lookback_days = 
 
     # return video_record_list
     # return pl.DataFrame(video_record_list)
-    pl.DataFrame(video_record_list).write_parquet("data/video_ids.parquet")
+    current_timestamp = datetime.now().strftime("%Y-%m-%d_%H.%M.%S")
+    file_name = f"data/video_ids_{current_timestamp}.parquet"
+    pl.DataFrame(video_record_list).write_parquet(file_name)
 
 
 # video_id_df = get_video_ids(channel_id = "UCBTy8j2cPy6zw68godcE7MQ")
@@ -146,7 +148,9 @@ def get_video_transcripts() -> dict:
 
     # Return
     # return data
-    data.write_parquet("data/video_transcripts.parquet")
+    current_timestamp = datetime.now().strftime("%Y-%m-%d_%H.%M.%S")
+    file_name = f"data/video_transcripts{current_timestamp}.parquet"
+    data.write_parquet(file_name)
 
 # video_transcript_df = get_video_transcripts(video_id_df)
 
@@ -174,7 +178,9 @@ def handle_special_strings(data: pl.dataframe.frame.DataFrame) -> pl.dataframe.f
         df = data.with_columns(data['transcript'].str.replace(special_strings[i], special_string_replacements[i]).alias('transcript'))
 
     # return df
-    df.write_parquet("data/video_transcript_special_strings.parquet")
+    current_timestamp = datetime.now().strftime("%Y-%m-%d_%H.%M.%S")
+    file_name = f"data/video_transcript_special_strings{current_timestamp}.parquet"
+    df.write_parquet(file_name)
 
 # video_transcript_special_strings_df = handle_special_strings(video_transcript_df)
 
@@ -195,7 +201,9 @@ def setDatatypes(data: pl.dataframe.frame.DataFrame) -> pl.dataframe.frame.DataF
     df = data.with_columns(pl.col('datetime').cast(pl.Datetime))
 
     # return df
-    df.write_parquet("data/video_transcript_special_strings_datatypes.parquet")
+    current_timestamp = datetime.now().strftime("%Y-%m-%d_%H.%M.%S")
+    file_name = f"data/video_transcript_special_strings_datatypes{current_timestamp}.parquet"
+    df.write_parquet(file_name)
 
 # data_types_df = setDatatypes(video_transcript_special_strings_df)
 
