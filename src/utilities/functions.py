@@ -117,14 +117,50 @@ def get_video_ids(channel_id: str = "UCBTy8j2cPy6zw68godcE7MQ", lookback_days = 
     pl.DataFrame(video_record_list).write_parquet(file_name)
 
 
+
+
 # video_id_df = get_video_ids(channel_id = "UCBTy8j2cPy6zw68godcE7MQ")
+
+def read_most_recent_file(data_file = "video_ids"):
+
+    # Specify the folder containing the files
+    folder_path = "data/"
+
+    # List all files in the folder
+    if data_file == "video_ids":
+        files = [f for f in os.listdir(folder_path) if f.startswith("video_ids") and f.endswith(".parquet")]
+    elif data_file == "video_transcripts":
+        files = [f for f in os.listdir(folder_path) if f.startswith("video_transcripts") and f.endswith(".parquet")]
+    elif data_file == "video_transcript_special_strings":
+        files = [f for f in os.listdir(folder_path) if f.startswith("video_transcript_special_strings") and f.endswith(".parquet")]
+    elif data_file == "video_transcript_special_strings_datatypes":
+        files = [f for f in os.listdir(folder_path) if f.startswith("video_transcript_special_strings_datatypes") and f.endswith(".parquet")]
+    else:
+        files = []
+    # files = [f for f in os.listdir(folder_path) if f.startswith("video_ids") and f.endswith(".parquet")]
+
+    # Ensure there are matching files
+    if len(files) == 0:
+        raise FileNotFoundError("No video_ids parquet files found in the data folder.")
+
+    # Sort files by timestamp in descending order to get the most recent file
+    files.sort(key=lambda f: os.path.getmtime(os.path.join(folder_path, f)), reverse=True)
+
+    # Get the most recent file
+    latest_file = os.path.join(folder_path, files[0])
+
+    # Read the most recent file using Polars
+    data = pl.read_parquet(latest_file)
+
 
 
 # Get Video Transcripts ----
 def get_video_transcripts() -> dict:
 
     # Load Data
-    data = pl.read_parquet("data/video_ids.parquet")
+    # data = pl.read_parquet("data/video_ids.parquet")
+    data = read_most_recent_file(data_file = "video_ids")
+    data = pl.read_parquet('data/video_ids_2024-12-26_11.33.59.parquet')
 
     # Initialize list to store transcripts
     transcript_text_list = []
