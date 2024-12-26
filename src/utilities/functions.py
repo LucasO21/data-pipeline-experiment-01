@@ -15,7 +15,7 @@ import numpy as np
 
 
 # Youtube API Key
-load_dotenv(dotenv_path = ".env")
+# load_dotenv(dotenv_path = ".env")
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 
 

@@ -1,4 +1,4 @@
-from functions import get_video_ids, get_video_transcripts
+from src.utilities.functions import get_video_ids, get_video_transcripts
 import time
 import datetime
 
