@@ -229,6 +229,8 @@ def get_save_weather_data(data: pd.DataFrame):
         data (pandas.DataFrame): Weather data
     """
 
+    data = data.copy()
+
     current_timestamp = datetime.now().strftime("%Y-%m-%d_%H.%M.%S")
     file_name = f"data/open_weather_data/open_weather_data_{current_timestamp}.csv"
     data.to_csv(file_name, index=False)
@@ -334,3 +336,4 @@ def get_combine_weather_data(
         print(f"Error saving combined file: {str(e)}")
 
 # get_combine_weather_data(verbose=True, overwrite=True)
+
