@@ -4,4 +4,4 @@ sentence-transformers==2.6.1
 requests==2.31.0
 google-api-python-client==2.156.0
 PyYAML==6.0.2
-python-dotenv==1.0.1git
+python-dotenv==1.0.1
