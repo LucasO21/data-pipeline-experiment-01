@@ -1,7 +1,7 @@
-name: data-pipeline-workflow
+name: open-weather-data-pipeline-workflow
 
 on:
-  push: # uncomment to run on push
+  #push: # uncomment to run on push
   schedule:
     - cron: "30 18 * * *" # run every day at 12:35AM
   workflow_dispatch:  # manual triggers
@@ -37,5 +37,5 @@ jobs:
       - name: Commit and push if changes
         if: env.changes == 'true' # if changes made push new data to repo
         run: |
-          git commit -m "updated video index"
+          git commit -m "updated weather data extract"
           git push
