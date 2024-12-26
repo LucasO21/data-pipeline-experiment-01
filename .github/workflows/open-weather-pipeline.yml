@@ -25,7 +25,7 @@ jobs:
         run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
       - name: Run data pipeline
         env:
-          YOUTUBE_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }} # import API key
+          OPEN_WEATHER_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }} # import API key
         run: python src/pipelines/open_weather_pipeline.py # run data pipeline
       - name: Check for changes # create env variable indicating if any changes were made
         id: git-check

@@ -229,11 +229,11 @@ def get_save_weather_data(data: pd.DataFrame):
         data (pandas.DataFrame): Weather data
     """
 
-    data = data.copy()
+    df = data
 
     current_timestamp = datetime.now().strftime("%Y-%m-%d_%H.%M.%S")
     file_name = f"data/open_weather_data/open_weather_data_{current_timestamp}.csv"
-    data.to_csv(file_name, index=False)
+    df.to_csv(file_name, index=False)
 
     print(f"\nWeather data saved to {file_name}!")
 
