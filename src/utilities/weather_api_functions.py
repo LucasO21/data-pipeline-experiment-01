@@ -75,7 +75,7 @@ def get_kelvin_to_fahrenheit(temp_in_kelvin):
 # Function: Get Weather Data ----
 # def get_current_weather_data(country = "US", state = "MD", city = "Odenton"):
 
-#     api_key = "b16a6367cbf0bf2af37e54a098c9bcc6"
+#     api_key = ""
 
 #     URL = f"https://api.openweathermap.org/data/2.5/weather?q={city},{state},{country}&appid={api_key}"
 
@@ -144,7 +144,7 @@ def get_current_weather_data(country="US", state="MD", city="Odenton", verbose=F
     if verbose:
         print(f"\nFetching weather data for {city}, {state}, {country}...")
 
-    # api_key = "b16a6367cbf0bf2af37e54a098c9bcc6"
+    # api_key = ""
     api_key = OPEN_WEATHER_API_KEY
     URL = f"https://api.openweathermap.org/data/2.5/weather?q={city},{state},{country}&appid={api_key}"
 
