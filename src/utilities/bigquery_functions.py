@@ -1,5 +1,6 @@
 from google.api_core import retry
 from google.cloud.exceptions import NotFound
+from google.api_core.exceptions import RetryError, NotFound
 import pandas as pd
 import logging
 from typing import Union, List, Dict, Optional

@@ -10,9 +10,17 @@ from pathlib import Path
 from typing import List
 import glob
 from dotenv import load_dotenv
+import logging
 
 # API Key ----
 OPEN_WEATHER_API_KEY = os.getenv("OPEN_WEATHER_API_KEY")
+
+# Logging ----
+logging.basicConfig(
+    filename = "log.log",
+    level = logging.INFO,
+    format = "%(asctime)s:%(levelname)s:%(message)s"
+)
 
 # Function: Kelvin to Fahrenheit ----
 def get_kelvin_to_fahrenheit(temp_in_kelvin):
@@ -143,6 +151,7 @@ def get_current_weather_data(country="US", state="MD", city="Odenton", verbose=F
 
     if verbose:
         print(f"\nFetching weather data for {city}, {state}, {country}...")
+        logging.info(f"Fetching weather data for {city}, {state}, {country}...")
 
     # api_key = ""
     api_key = OPEN_WEATHER_API_KEY

@@ -2,3 +2,10 @@ credentials.yml
 .env
 .DS_Store
 venv/
+
+utilities/opt_web_analytics.py
+utilities/open_data_toronto_functions.py
+utilities/bigquery_functions.py
+utilities/functions.py
+
+pipelines/open_weather_pipeline.py
