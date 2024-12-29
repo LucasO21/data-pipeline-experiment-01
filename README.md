@@ -1,4 +1,5 @@
-# 🌦️ Data Pipeline Example 01: Minimalist Data Pipeline with OpenWeather API
+# 🌦️ Data Pipeline Example 01
+## Minimalist Data Pipeline with OpenWeather API
 
 Welcome to the **Minimalist Data Pipeline Project**, where simplicity meets functionality. This repository contains code for automating a data pipeline that fetches the current weather from the OpenWeather API and saves it to a local `data/` folder using Python and GitHub Actions. 🚀
 
@@ -8,7 +9,8 @@ __This project is part of a learning series where I am exploring how to automate
 
 ## 📖 Table of Contents
 
-- [🌦️ Data Pipeline Example 01: Minimalist Data Pipeline with OpenWeather API](#️-data-pipeline-example-01-minimalist-data-pipeline-with-openweather-api)
+- [🌦️ Data Pipeline Example 01](#️-data-pipeline-example-01)
+  - [Minimalist Data Pipeline with OpenWeather API](#minimalist-data-pipeline-with-openweather-api)
   - [📖 Table of Contents](#-table-of-contents)
   - [🌟 Project Overview](#-project-overview)
   - [🛠️ Features](#️-features)
