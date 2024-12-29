@@ -8,4 +8,4 @@ utilities/open_data_toronto_functions.py
 utilities/bigquery_functions.py
 utilities/functions.py
 
-pipelines/open_weather_pipeline.py
+pipelines/data_pipeline.py
