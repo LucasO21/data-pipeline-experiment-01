@@ -1,0 +1,2 @@
+request_datetime,city_name,city_id,city_country,longitude,latitude,weather_description,temp_farenheit,temp_min_farenheit,temp_max_farenheit,humidity,wind_speed
+2024-12-31 18:39:46,Odenton,4364362,US,-76.7002,39.084,clear sky,57.56000000000009,54.59000000000002,60.13399999999999,53,7.72
