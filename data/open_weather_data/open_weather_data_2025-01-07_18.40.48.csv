@@ -1,0 +1,2 @@
+request_datetime,city_name,city_id,city_country,longitude,latitude,weather_description,temp_farenheit,temp_min_farenheit,temp_max_farenheit,humidity,wind_speed
+2025-01-07 18:40:48,Odenton,4364362,US,-76.7002,39.084,moderate rain,33.602000000000075,31.802000000000078,34.97000000000006,55,7.2
